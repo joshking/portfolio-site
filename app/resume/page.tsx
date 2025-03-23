@@ -220,10 +220,6 @@ export default function Resume() {
                   <h3 className="font-medium text-sm">AAS Computer</h3>
                   <p className="text-sm text-[#606060]">Science, 1996-2000</p>
                 </div>
-                <div>
-                  <h3 className="font-medium text-sm">BFA, University of</h3>
-                  <p className="text-sm text-[#606060]">Montana</p>
-                </div>
               </div>
             </section>
 
