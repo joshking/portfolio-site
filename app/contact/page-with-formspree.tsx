@@ -1,70 +1,38 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import Link from "next/link"
+import { LinkedinIcon } from "@/components/ui/icons"
+import { Logo } from "@/components/ui/logo"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Header } from "@/components/Header"
-import { Footer } from "@/components/Footer"
-
-// Recipient email address for the contact form
-const RECIPIENT_EMAIL = "webposer@gmail.com"
 
 export default function Contact() {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [message, setMessage] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<{ success: boolean; message: string } | null>(null)
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus(null)
 
-    // Simple validation
-    if (!name || !email || !message) {
-      setSubmitStatus({
-        success: false,
-        message: "Please fill in all fields.",
-      })
-      setIsSubmitting(false)
-      return
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
-      setSubmitStatus({
-        success: false,
-        message: "Please enter a valid email address.",
-      })
-      setIsSubmitting(false)
-      return
-    }
-
-    // Prepare form data
-    const formData = {
-      name,
-      email,
-      message,
-    }
+    const formData = new FormData(e.currentTarget)
 
     try {
-      // Send the form data to your API route
-      const response = await fetch("/api/contact", {
+      // Replace YOUR_FORM_ID with your actual Formspree form ID
+      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
       })
 
-      const data = await response.json()
-
       if (!response.ok) {
-        throw new Error(data.error || "Failed to send message")
+        throw new Error("Form submission failed")
       }
 
       setSubmitStatus({
@@ -72,12 +40,9 @@ export default function Contact() {
         message: "Thank you for your message! I'll get back to you soon.",
       })
 
-      // Reset form
-      setName("")
-      setEmail("")
-      setMessage("")
+      // Reset the form
+      e.currentTarget.reset()
     } catch (error) {
-      console.error("Error sending message:", error)
       setSubmitStatus({
         success: false,
         message: "There was an error sending your message. Please try again.",
@@ -89,7 +54,20 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-[#d1fae5] flex flex-col">
-      <Header />
+      <header className="p-6 flex justify-between items-center">
+        <Logo />
+        <nav className="flex space-x-8">
+          <Link href="/resume" className="text-sm font-medium hover:text-[#3ddc91] transition-colors">
+            Resume
+          </Link>
+          <Link href="/portfolio" className="text-sm font-medium hover:text-[#3ddc91] transition-colors">
+            Portfolio
+          </Link>
+          <Link href="/contact" className="text-sm font-medium hover:text-[#3ddc91] transition-colors">
+            Contact
+          </Link>
+        </nav>
+      </header>
 
       <main className="flex-1 px-6 md:px-16 lg:px-24 py-8 flex items-center justify-center">
         <div className="w-full max-w-md mx-auto">
@@ -116,11 +94,11 @@ export default function Contact() {
               </label>
               <Input
                 id="name"
+                name="name"
                 type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
                 className="bg-white border border-[#000000] rounded-md focus-visible:ring-[#3ddc91] focus-visible:ring-offset-0"
                 aria-required="true"
+                required
               />
             </div>
 
@@ -130,11 +108,11 @@ export default function Contact() {
               </label>
               <Input
                 id="email"
+                name="email"
                 type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 className="bg-white border border-[#000000] rounded-md focus-visible:ring-[#3ddc91] focus-visible:ring-offset-0"
                 aria-required="true"
+                required
               />
             </div>
 
@@ -144,11 +122,11 @@ export default function Contact() {
               </label>
               <Textarea
                 id="message"
+                name="message"
                 rows={5}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
                 className="bg-white border border-[#000000] rounded-md focus-visible:ring-[#3ddc91] focus-visible:ring-offset-0"
                 aria-required="true"
+                required
               />
             </div>
 
@@ -163,7 +141,17 @@ export default function Contact() {
         </div>
       </main>
 
-      <Footer />
+      <footer className="bg-[#000000] text-white p-6 flex justify-between items-center">
+        <Link href="https://linkedin.com" className="text-white hover:text-[#3ddc91]">
+          <LinkedinIcon className="h-5 w-5" />
+        </Link>
+        <div className="text-sm">
+          Email me:{" "}
+          <Link href="mailto:me@joshking.me" className="text-[#3ddc91] hover:underline">
+            me@joshking.me
+          </Link>
+        </div>
+      </footer>
     </div>
   )
 }

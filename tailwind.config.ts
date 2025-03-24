@@ -10,11 +10,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // This is where you extend or override Tailwind's default theme
       colors: {
         background: "#d1fae5",
         foreground: "#000000",
         muted: "#b0b0b0",
         accent: "#3ddc91",
+        // Add new custom colors here
+        "custom-blue": "#1a365d",
+        "custom-purple": "#553c9a",
         card: {
           DEFAULT: "#ffffff",
           foreground: "#000000",
@@ -48,11 +52,16 @@ const config: Config = {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      // Add custom spacing, typography, etc.
+      spacing: {
+        "128": "32rem",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      // Add custom animations
       keyframes: {
         "accordion-down": {
           from: {

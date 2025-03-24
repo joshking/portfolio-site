@@ -103,3 +103,10 @@ body {
   }
 }
 
+@layer components {
+  .custom-class {
+    @apply bg-gradient-to-b from-background to-background/80;
+    /* Add any other styles you want */
+  }
+}
+

@@ -1,23 +1,12 @@
-import Link from "next/link"
 import Image from "next/image"
 import { Separator } from "@/components/ui/separator"
-import { LinkedinIcon } from "@/components/ui/icons"
-import { Logo } from "@/components/ui/logo"
+import { Header } from "@/components/Header"
+import { Footer } from "@/components/Footer"
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#d1fae5] flex flex-col">
-      <header className="p-6 flex justify-between items-center">
-        <Logo />
-        <nav className="flex space-x-8">
-          <Link href="/resume" className="text-sm font-medium hover:text-[#3ddc91] transition-colors">
-            Resume
-          </Link>
-          <Link href="/portfolio" className="text-sm font-medium hover:text-[#3ddc91] transition-colors">
-            Portfolio
-          </Link>
-        </nav>
-      </header>
+      <Header />
 
       <main className="flex-1 flex flex-col justify-center px-6 md:px-16 lg:px-24 py-8">
         <div className="max-w-4xl mx-auto w-full">
@@ -82,17 +71,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="bg-[#000000] text-white p-6 flex justify-between items-center">
-        <Link href="https://linkedin.com/in/joshkingbillings/" className="text-white hover:text-[#3ddc91]">
-          <LinkedinIcon className="h-5 w-5" />
-        </Link>
-        <div className="text-sm">
-          Email me:{" "}
-          <Link href="mailto:me@joshking.me" className="text-[#3ddc91] hover:underline">
-            me@joshking.me
-          </Link>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

@@ -2,12 +2,11 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Modal } from "@/components/ui/modal"
-import { LinkedinIcon } from "@/components/ui/icons"
-import { Logo } from "@/components/ui/logo"
+import { Header } from "@/components/Header"
+import { Footer } from "@/components/Footer"
 
 // Session storage key
 const AUTH_KEY = "portfolio_authenticated"
@@ -36,20 +35,7 @@ export default function CaseStudy() {
 
   return (
     <div className="min-h-screen bg-[#d1fae5] flex flex-col">
-      <header className="p-6 flex justify-between items-center">
-        <Logo />
-        <nav className="flex space-x-8">
-          <Link href="/resume" className="text-sm font-medium hover:text-[#3ddc91] transition-colors">
-            Resume
-          </Link>
-          <Link href="/portfolio" className="text-sm font-medium hover:text-[#3ddc91] transition-colors">
-            Portfolio
-          </Link>
-          <Link href="/contact" className="text-sm font-medium hover:text-[#3ddc91] transition-colors">
-            Contact
-          </Link>
-        </nav>
-      </header>
+      <Header />
 
       <main className="flex-1 px-6 md:px-16 lg:px-24 py-8 max-w-7xl mx-auto">
         <h1 className="text-6xl font-bold mb-6">
@@ -190,17 +176,7 @@ export default function CaseStudy() {
         </div>
       </main>
 
-      <footer className="bg-[#000000] text-white p-6 flex justify-between items-center">
-        <Link href="https://linkedin.com" className="text-white hover:text-[#3ddc91]">
-          <LinkedinIcon className="h-5 w-5" />
-        </Link>
-        <div className="text-sm">
-          Email me:{" "}
-          <Link href="mailto:me@joshking.me" className="text-[#3ddc91] hover:underline">
-            me@joshking.me
-          </Link>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

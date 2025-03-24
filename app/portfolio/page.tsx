@@ -3,14 +3,14 @@
 import type React from "react"
 
 import { useState, useEffect } from "react"
-import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { AlertCircleIcon, LinkedinIcon, EyeIcon, EyeOffIcon } from "@/components/ui/icons"
-import { Logo } from "@/components/ui/logo"
+import { AlertCircleIcon, EyeIcon, EyeOffIcon } from "@/components/ui/icons"
+import { Header } from "@/components/Header"
+import { Footer } from "@/components/Footer"
 
 // Session storage key
 const AUTH_KEY = "portfolio_authenticated"
@@ -21,9 +21,6 @@ export default function PortfolioLogin() {
   const [isLoading, setIsLoading] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const router = useRouter()
-
-  // Valid passphrases - in a real app, this would be handled server-side
-  const validPassphrases = ["abracadabra"]
 
   // Check if user is already authenticated on component mount
   useEffect(() => {
@@ -43,7 +40,7 @@ export default function PortfolioLogin() {
 
     // Simulate API call with timeout
     setTimeout(() => {
-      if (validPassphrases.includes(trimmedPassphrase)) {
+      if (trimmedPassphrase === "abracadabra") {
         // Store authentication state in sessionStorage
         sessionStorage.setItem(AUTH_KEY, "true")
         router.push("/portfolio/case-studies")
@@ -60,17 +57,7 @@ export default function PortfolioLogin() {
 
   return (
     <div className="min-h-screen bg-[#d1fae5] flex flex-col">
-      <header className="p-6 flex justify-between items-center">
-        <Logo />
-        <nav className="flex space-x-8">
-          <Link href="/resume" className="text-sm font-medium hover:text-[#3ddc91] transition-colors">
-            Resume
-          </Link>
-          <Link href="/portfolio" className="text-sm font-medium hover:text-[#3ddc91] transition-colors">
-            Portfolio
-          </Link>
-        </nav>
-      </header>
+      <Header />
 
       <main className="flex-1 flex flex-col justify-center items-center px-6 py-8">
         <Card className="w-full max-w-md bg-white border-0 shadow-md">
@@ -87,6 +74,7 @@ export default function PortfolioLogin() {
                     <AlertDescription>{error}</AlertDescription>
                   </Alert>
                 )}
+
                 <div className="space-y-2">
                   <label htmlFor="passphrase" className="text-sm font-medium">
                     Passphrase
@@ -128,17 +116,7 @@ export default function PortfolioLogin() {
         </Card>
       </main>
 
-      <footer className="bg-[#000000] text-white p-6 flex justify-between items-center">
-        <Link href="https://www.linkedin.com/in/joshkingbillings/" className="text-white hover:text-[#3ddc91]">
-          <LinkedinIcon className="h-5 w-5" />
-        </Link>
-        <div className="text-sm">
-          Email me:{" "}
-          <Link href="mailto:me@joshking.me" className="text-[#3ddc91] hover:underline">
-            me@joshking.me
-          </Link>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

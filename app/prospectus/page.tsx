@@ -1,26 +1,13 @@
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { SearchIcon, LinkedinIcon } from "@/components/ui/icons"
-import { Logo } from "@/components/ui/logo"
+import { SearchIcon } from "@/components/ui/icons"
+import { Header } from "@/components/Header"
+import { Footer } from "@/components/Footer"
 
 export default function Prospectus() {
   return (
     <div className="min-h-screen bg-[#d1fae5] flex flex-col">
-      <header className="p-6 flex justify-between items-center">
-        <Logo />
-        <nav className="flex space-x-8">
-          <Link href="/resume" className="text-sm font-medium hover:text-[#3ddc91] transition-colors">
-            Resume
-          </Link>
-          <Link href="/portfolio" className="text-sm font-medium hover:text-[#3ddc91] transition-colors">
-            Portfolio
-          </Link>
-          <Link href="/contact" className="text-sm font-medium hover:text-[#3ddc91] transition-colors">
-            Contact
-          </Link>
-        </nav>
-      </header>
+      <Header />
 
       <main className="flex-1 flex flex-col justify-center items-center px-6">
         <div className="max-w-md w-full">
@@ -38,18 +25,7 @@ export default function Prospectus() {
           </div>
         </div>
       </main>
-
-      <footer className="bg-[#000000] text-white p-6 flex justify-between items-center">
-        <Link href="https://linkedin.com" className="text-white hover:text-[#3ddc91]">
-          <LinkedinIcon className="h-5 w-5" />
-        </Link>
-        <div className="text-sm">
-          Email me:{" "}
-          <Link href="mailto:me@joshking.me" className="text-[#3ddc91] hover:underline">
-            me@joshking.me
-          </Link>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
