@@ -48,9 +48,6 @@ export default function CaseStudies() {
           <Link href="/portfolio" className="text-sm font-medium hover:text-[#3ddc91] transition-colors">
             Portfolio
           </Link>
-          <Link href="/contact" className="text-sm font-medium hover:text-[#3ddc91] transition-colors">
-            Contact
-          </Link>
         </nav>
       </header>
 

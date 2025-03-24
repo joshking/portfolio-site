@@ -87,7 +87,6 @@ export default function PortfolioLogin() {
                     <AlertDescription>{error}</AlertDescription>
                   </Alert>
                 )}
-
                 <div className="space-y-2">
                   <label htmlFor="passphrase" className="text-sm font-medium">
                     Passphrase
