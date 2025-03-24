@@ -1,21 +1,10 @@
-import Link from "next/link"
-import { LinkedinIcon } from "@/components/ui/icons"
-import { Logo } from "@/components/ui/logo"
+import { Header } from "@/components/Header"
+import { Footer } from "@/components/Footer"
 
 export default function Resume() {
   return (
     <div className="min-h-screen bg-[#d1fae5] flex flex-col">
-      <header className="p-6 flex justify-between items-center">
-        <Logo />
-        <nav className="flex space-x-8">
-          <Link href="/resume" className="text-sm font-medium hover:text-[#3ddc91] transition-colors">
-            Resume
-          </Link>
-          <Link href="/portfolio" className="text-sm font-medium hover:text-[#3ddc91] transition-colors">
-            Portfolio
-          </Link>
-        </nav>
-      </header>
+      <Header />
 
       <main className="flex-1 px-6 md:px-16 lg:px-24 py-8 max-w-7xl mx-auto">
         <h1 className="text-5xl font-bold mb-4">RESUME</h1>
@@ -60,7 +49,7 @@ export default function Resume() {
                       Coordinated with leadership, other designers, contractors, and other stakeholders from around the
                       company around process, and internal policies.
                     </li>
-                    <li>Led and guided product decisions.</li>
+                    <li>I've led and guided product decisions.</li>
                   </ul>
                 </article>
 
@@ -185,6 +174,11 @@ export default function Resume() {
                     </li>
                     <li>Managed and hired content staff.</li>
                     <li>Created, developed, and managed the helenair.com website.</li>
+                    <li>
+                      Worked with customers to develop websites and online advertising strategy raising online revenue.
+                    </li>
+                    <li>Managed and hired content staff.</li>
+                    <li>Created, developed, and managed the helenair.com website.</li>
                   </ul>
                 </article>
               </div>
@@ -217,8 +211,8 @@ export default function Resume() {
 
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-medium text-sm">AAS Computer</h3>
-                  <p className="text-sm text-[#606060]">Science, 1996-2000</p>
+                  <h3 className="font-medium text-sm">AAS Computer Science, University of Montana</h3>
+                  <p className="text-sm text-[#606060]">1996-2000</p>
                 </div>
               </div>
             </section>
@@ -236,18 +230,7 @@ export default function Resume() {
           </div>
         </div>
       </main>
-
-      <footer className="bg-[#000000] text-white p-6 flex justify-between items-center">
-        <Link href="https://www.linkedin.com/in/joshkingbillings/" className="text-white hover:text-[#3ddc91]">
-          <LinkedinIcon className="h-5 w-5" />
-        </Link>
-        <div className="text-sm">
-          Email me:{" "}
-          <Link href="mailto:me@joshking.me" className="text-[#3ddc91] hover:underline">
-            me@joshking.me
-          </Link>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
