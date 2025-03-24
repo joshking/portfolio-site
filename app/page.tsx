@@ -83,7 +83,7 @@ export default function Home() {
       </main>
 
       <footer className="bg-[#000000] text-white p-6 flex justify-between items-center">
-        <Link href="https://linkedin.com" className="text-white hover:text-[#3ddc91]">
+        <Link href="https://linkedin.com/in/joshkingbillings/" className="text-white hover:text-[#3ddc91]">
           <LinkedinIcon className="h-5 w-5" />
         </Link>
         <div className="text-sm">

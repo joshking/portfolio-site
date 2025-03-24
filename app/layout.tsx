@@ -41,15 +41,6 @@ export default function RootLayout({
           <div className="min-h-screen flex flex-col">
             <main className="flex-1">{children}</main>
             <footer className="bg-[#000000] text-white p-2 flex justify-between items-center text-xs">
-              <div className="flex items-center gap-1">
-                <ChevronLeftIcon className="h-3 w-3" />
-                <span>Previous</span>
-              </div>
-              <div className="text-center text-[10px] opacity-70">Portfolio © {new Date().getFullYear()}</div>
-              <div className="flex items-center gap-1">
-                <span>Next</span>
-                <ChevronRightIcon className="h-3 w-3" />
-              </div>
             </footer>
           </div>
         </ThemeProvider>
