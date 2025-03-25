@@ -191,16 +191,14 @@ export default function Resume() {
 
               <ul className="text-sm space-y-2">
                 <li>Proven Leader</li>
-                <li>Built and led 5 design teams</li>
+                <li>Built and led design teams</li>
                 <li>Product founder</li>
                 <li>Launched multiple products</li>
                 <li>Launched multiple design systems</li>
                 <li>Team player</li>
                 <li>Previous developer</li>
-                <li>Diverse Experience</li>
-                <li>Overseas working/management</li>
                 <li>Motion and photography</li>
-                <li>Front end development</li>
+                <li>Experience with React, Angular, Next.js</li>
                 <li>UX</li>
                 <li>Certified Scrum master</li>
               </ul>
