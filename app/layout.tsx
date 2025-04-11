@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Josh King" }],
   creator: "Josh King",
   icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
-    shortcut: "/favicon.png",
+    icon: "/favicon.ico",
+    apple: "/favicon.ico",
+    shortcut: "/favicon.ico",
   },
   openGraph: {
     type: "website",
