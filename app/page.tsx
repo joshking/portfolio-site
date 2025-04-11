@@ -2,7 +2,6 @@ import Image from "next/image"
 import { Separator } from "@/components/ui/separator"
 import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
-import Link from "next/link"
 
 export default function Home() {
   return (
@@ -30,7 +29,7 @@ export default function Home() {
           <Separator className="mb-8 bg-[#00000020]" />
 
           <div className="flex flex-wrap justify-between mb-8 items-center w-full">
-            <Link href="/portfolio/case-studies/dell" className="h-12 w-24 relative">
+            <div className="h-12 w-24 relative">
               <Image
                 src="/images/dell-logo.png"
                 alt="Dell - Previous employer"
@@ -38,8 +37,8 @@ export default function Home() {
                 className="object-contain"
                 priority
               />
-            </Link>
-            <Link href="/portfolio/case-studies/stormforge" className="h-12 w-36 relative">
+            </div>
+            <div className="h-12 w-36 relative">
               <Image
                 src="/images/stormforge-logo.png"
                 alt="StormForge - Previous employer"
@@ -47,8 +46,8 @@ export default function Home() {
                 className="object-contain"
                 priority
               />
-            </Link>
-            <Link href="#" className="h-12 w-24 relative">
+            </div>
+            <div className="h-12 w-24 relative">
               <Image
                 src="/images/sofi-logo.png"
                 alt="SoFi - Previous employer"
@@ -56,8 +55,8 @@ export default function Home() {
                 className="object-contain"
                 priority
               />
-            </Link>
-            <Link href="/portfolio/case-studies/saucelabs" className="h-12 w-36 relative">
+            </div>
+            <div className="h-12 w-36 relative">
               <Image
                 src="/images/saucelabs-logo.png"
                 alt="SauceLabs - Previous employer"
@@ -65,7 +64,7 @@ export default function Home() {
                 className="object-contain"
                 priority
               />
-            </Link>
+            </div>
           </div>
 
           <Separator className="mt-8 bg-[#00000020]" />
