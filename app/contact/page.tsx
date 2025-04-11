@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -9,9 +8,6 @@ import { Textarea } from "@/components/ui/textarea"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
-
-// Recipient email address for the contact form
-const RECIPIENT_EMAIL = "webposer@gmail.com"
 
 export default function Contact() {
   const [name, setName] = useState("")
@@ -167,4 +163,3 @@ export default function Contact() {
     </div>
   )
 }
-

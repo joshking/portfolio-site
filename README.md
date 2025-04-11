@@ -93,4 +93,3 @@ The portfolio section is protected by a simple passphrase authentication system 
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
-
