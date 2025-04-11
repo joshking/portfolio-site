@@ -35,12 +35,15 @@ export default function OptimizeLiveStudy() {
 
         <Alert className="bg-[#155e75] text-white border-0 mb-12">
           <AlertDescription className="space-y-2">
-            <h3 className="font-bold text-lg">TL;DR;</h3>
+            <h3 className="font-bold text-lg">Highlight</h3>
             <p>
               A full pivot from one product that was struggling, to finding market fit, and an eventual acquisition
               March 2025.
             </p>
-            <p className="text-sm">View screens from the project in Figma.</p>
+            <p className="text-sm">
+            <Link href="https://www.figma.com/design/NxMFBFB1RUmzLRPHTQBJob/Portfolio?node-id=377-63270&t=GTUPx0hnSAN8PwFo-1" className="text-blue-100 hover:underline">
+              View screens from the project in Figma.
+            </Link></p>
           </AlertDescription>
         </Alert>
 
@@ -143,7 +146,7 @@ export default function OptimizeLiveStudy() {
           </ul>
 
           <div className="mt-8">
-            <Link href="#" className="text-blue-600 hover:underline">
+            <Link href="https://www.figma.com/design/NxMFBFB1RUmzLRPHTQBJob/Portfolio?node-id=377-63270&t=GTUPx0hnSAN8PwFo-1" className="text-blue-600 hover:underline">
               View the project in Figma
             </Link>
           </div>

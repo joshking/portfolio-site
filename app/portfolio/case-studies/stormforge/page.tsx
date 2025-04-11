@@ -99,7 +99,7 @@ export default function StormForgeProject() {
                     View study
                   </Link>
                   <span className="text-gray-400">|</span>
-                  <Link href="#" className="text-sm text-blue-600 hover:underline">
+                  <Link href="https://www.figma.com/design/NxMFBFB1RUmzLRPHTQBJob/Portfolio?node-id=377-63270&t=GTUPx0hnSAN8PwFo-1" className="text-sm text-blue-600 hover:underline">
                     View screens in Figma
                   </Link>
                 </div>
