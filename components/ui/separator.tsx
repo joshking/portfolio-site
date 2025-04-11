@@ -21,4 +21,3 @@ const Separator = React.forwardRef<HTMLDivElement, SeparatorProps>(
 Separator.displayName = "Separator"
 
 export { Separator }
-

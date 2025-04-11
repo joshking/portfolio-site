@@ -16,7 +16,7 @@ export default function Resume() {
               <h2 className="text-xl font-semibold mb-4">Overview</h2>
               <p className="text-sm mb-4">
                 I'm a multi-discipline product designer with 20+ years professional experience. I have worked in a wide
-                variety of fields, but have most recently focused on developer tools. I have delivered multiple products
+                variety of fields, but have primarily focused on developer tools. I have delivered multiple products
                 within automation, CI/CD testing, IT, machine learning, infrastructure, performance and optimization. I
                 have built and led multiple design teams and primarily operated as a player-coach for most of my career.
               </p>
@@ -142,10 +142,10 @@ export default function Resume() {
 
                 <article>
                   <h3 className="font-medium text-base">Lead Designer, Design Manager, Co-Founder</h3>
-                  <p className="text-sm text-[#606060] mb-1">Dealerpath</p>
+                  <p className="text-sm text-[#606060] mb-1">Dealerspan</p>
                   <p className="text-sm text-[#606060] mb-3">Oct 2004 - Mar 2009</p>
                   <p className="text-sm mb-3">
-                    Dealerpath was an end-to-end automobile dealership solution. I was a co-founder here, and served
+                    Dealerspan was an end-to-end automobile dealership solution. I was a co-founder here, and served
                     many roles at this series B startup with about 20+ employees. My main role was to oversee all
                     aspects of design but served for a time overseeing both design, product, engineering, and QA.
                   </p>
@@ -191,15 +191,14 @@ export default function Resume() {
 
               <ul className="text-sm space-y-2">
                 <li>Proven Leader</li>
-                <li>Built and led design teams</li>
+                <li>Built and led multiple design teams</li>
                 <li>Product founder</li>
                 <li>Launched multiple products</li>
                 <li>Launched multiple design systems</li>
                 <li>Team player</li>
-                <li>Previous developer</li>
+                <li>Front end dev experience</li>
+                <li>Overseas working/management</li>
                 <li>Motion and photography</li>
-                <li>Experience with React, Angular, Next.js</li>
-                <li>UX</li>
                 <li>Certified Scrum master</li>
               </ul>
             </section>
@@ -232,4 +231,3 @@ export default function Resume() {
     </div>
   )
 }
-

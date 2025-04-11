@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -15,6 +14,12 @@ import { Footer } from "@/components/Footer"
 // Session storage key
 const AUTH_KEY = "portfolio_authenticated"
 
+// Set to false to enable passphrase protection
+const BYPASS_AUTH = false
+
+// Valid passphrases
+const VALID_PASSPHRASES = ["abracadabra", "apollo"]
+
 export default function PortfolioLogin() {
   const [passphrase, setPassphrase] = useState("")
   const [error, setError] = useState("")
@@ -24,6 +29,13 @@ export default function PortfolioLogin() {
 
   // Check if user is already authenticated on component mount
   useEffect(() => {
+    // If bypassing auth, redirect immediately
+    if (BYPASS_AUTH) {
+      sessionStorage.setItem(AUTH_KEY, "true")
+      router.push("/portfolio/case-studies")
+      return
+    }
+
     const isAuthenticated = sessionStorage.getItem(AUTH_KEY) === "true"
     if (isAuthenticated) {
       router.push("/portfolio/case-studies")
@@ -35,24 +47,34 @@ export default function PortfolioLogin() {
     setIsLoading(true)
     setError("")
 
+    // If bypassing auth, redirect immediately
+    if (BYPASS_AUTH) {
+      sessionStorage.setItem(AUTH_KEY, "true")
+      router.push("/portfolio/case-studies")
+      return
+    }
+
     // Trim the passphrase to avoid whitespace issues
     const trimmedPassphrase = passphrase.toLowerCase().trim()
 
-    // Simulate API call with timeout
-    setTimeout(() => {
-      if (trimmedPassphrase === "abracadabra") {
-        // Store authentication state in sessionStorage
-        sessionStorage.setItem(AUTH_KEY, "true")
-        router.push("/portfolio/case-studies")
-      } else {
-        setError("Invalid passphrase. Please try again.")
-      }
-      setIsLoading(false)
-    }, 1000)
+    // Check if the passphrase is valid
+    if (VALID_PASSPHRASES.includes(trimmedPassphrase)) {
+      // Store authentication state in sessionStorage
+      sessionStorage.setItem(AUTH_KEY, "true")
+      router.push("/portfolio/case-studies")
+    } else {
+      setError("Invalid passphrase. Please try again.")
+    }
+    setIsLoading(false)
   }
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword)
+  }
+
+  // If bypassing auth, don't render the login form
+  if (BYPASS_AUTH) {
+    return <div className="min-h-screen bg-[#d1fae5] flex items-center justify-center">Redirecting...</div>
   }
 
   return (
@@ -120,4 +142,3 @@ export default function PortfolioLogin() {
     </div>
   )
 }
-

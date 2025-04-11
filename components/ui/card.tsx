@@ -1,9 +1,20 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
+import Link from "next/link"
 
-const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("rounded-lg border bg-card text-card-foreground shadow-sm", className)} {...props} />
-))
+const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & { href?: string }>(
+  ({ className, href, ...props }, ref) => {
+    const Comp = href ? Link : "div"
+    return (
+      <Comp
+        ref={ref}
+        className={cn("rounded-lg border bg-card text-card-foreground shadow-sm max-w-[600px]", className)}
+        {...(href ? { href } : {})}
+        {...props}
+      />
+    )
+  },
+)
 Card.displayName = "Card"
 
 const CardHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
@@ -28,7 +39,7 @@ const CardDescription = React.forwardRef<HTMLParagraphElement, React.HTMLAttribu
 CardDescription.displayName = "CardDescription"
 
 const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />,
+  ({ className, ...props }, ref) => <div ref={ref} className={cn("p-6", className)} {...props} />,
 )
 CardContent.displayName = "CardContent"
 
@@ -40,4 +51,3 @@ const CardFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDiv
 CardFooter.displayName = "CardFooter"
 
 export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
-
