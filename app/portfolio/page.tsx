@@ -132,6 +132,9 @@ export default function PortfolioLogin() {
               </div>
             </form>
           </CardContent>
+          <CardFooter className="flex justify-center text-sm text-[#606060]">
+            <p>Contact me for access to my portfolio case studies</p>
+          </CardFooter>
         </Card>
       </main>
 

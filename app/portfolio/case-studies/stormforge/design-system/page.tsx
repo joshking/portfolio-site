@@ -1,26 +1,9 @@
-"use client"
-
 import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
 import Link from "next/link"
 import Image from "next/image"
-import { useState } from "react"
-import { Modal } from "@/components/ui/modal"
 
 export default function DesignSystemCaseStudy() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
-  const openModal = (imageSrc: string) => {
-    setSelectedImage(imageSrc)
-    setIsModalOpen(true)
-  }
-
-  const closeModal = () => {
-    setIsModalOpen(false)
-    setSelectedImage(null)
-  }
-
   return (
     <div className="min-h-screen bg-[#d1fae5] flex flex-col">
       <Header />
@@ -125,90 +108,50 @@ export default function DesignSystemCaseStudy() {
 
         <section className="mb-12">
           <h3 className="text-2xl font-bold mb-4">Before & After</h3>
-          <p className="text-base mb-4">Click on images to view larger version</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="flex flex-col gap-12 mb-8">
             <div>
-              <h4 className="text-lg font-semibold mb-2">Before: "Batman Theme"</h4>
-              <div
-                className="cursor-pointer border border-gray-300 rounded-md overflow-hidden hover:opacity-90 transition-opacity"
-                onClick={() => openModal("/placeholder.svg?height=800&width=1200")}
-              >
+              <h4 className="text-lg font-semibold mb-4">Before & After: Main experiment screen</h4>
+              <p>Improved look and feel and combined 2 screens separated by tabs into a single view pane.</p>
+              <div className="overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=300&width=500"
-                  alt="Before: Batman theme dashboard"
-                  width={500}
-                  height={300}
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/plotsummary-lg-87m1The8AtAL4rolfq7oQ80W2gquQg.png"
+                  alt="Before & After: Data visualization comparison"
+                  width={1920}
+                  height={1080}
                   className="w-full h-auto"
                 />
               </div>
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold mb-2">After: Dark Mode</h4>
-              <div
-                className="cursor-pointer border border-gray-300 rounded-md overflow-hidden hover:opacity-90 transition-opacity"
-                onClick={() => openModal("/placeholder.svg?height=800&width=1200")}
-              >
+              <h4 className="text-lg font-semibold mb-4">Before & After: Experiments View</h4>
+              <p>Improved look and feel with direct access to YAML patch.</p>
+              <div className="overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=300&width=500"
-                  alt="After: New dark mode dashboard"
-                  width={500}
-                  height={300}
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <div>
-              <h4 className="text-lg font-semibold mb-2">Before: Charts</h4>
-              <div
-                className="cursor-pointer border border-gray-300 rounded-md overflow-hidden hover:opacity-90 transition-opacity"
-                onClick={() => openModal("/placeholder.svg?height=800&width=1200")}
-              >
-                <Image
-                  src="/placeholder.svg?height=300&width=500"
-                  alt="Before: Batman theme charts"
-                  width={500}
-                  height={300}
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Experiments-lg-QTnWRf6cDFQquFXTLbdkmS3HbJciUQ.png"
+                  alt="Before & After: Experiments view comparison"
+                  width={1920}
+                  height={1080}
                   className="w-full h-auto"
                 />
               </div>
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold mb-2">After: Charts</h4>
-              <div
-                className="cursor-pointer border border-gray-300 rounded-md overflow-hidden hover:opacity-90 transition-opacity"
-                onClick={() => openModal("/placeholder.svg?height=800&width=1200")}
-              >
+              <h4 className="text-lg font-semibold mb-4">Before & After: Performance Dashboard</h4>
+              <p>Significantly improved design and density</p>
+              <div className="overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=300&width=500"
-                  alt="After: New dark mode charts"
-                  width={500}
-                  height={300}
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/performance-lg-IlcezMFYTZvVYqtuPAXqzybrsDipBG.png"
+                  alt="Before & After: Performance dashboard comparison"
+                  width={1920}
+                  height={1080}
                   className="w-full h-auto"
                 />
               </div>
             </div>
           </div>
-
-          {/* Modal for displaying larger images */}
-          <Modal isOpen={isModalOpen} onClose={closeModal}>
-            {selectedImage && (
-              <div className="flex justify-center items-center">
-                <Image
-                  src={selectedImage || "/placeholder.svg"}
-                  alt="Enlarged view"
-                  width={1200}
-                  height={800}
-                  className="max-w-full max-h-[80vh] object-contain"
-                />
-              </div>
-            )}
-          </Modal>
         </section>
       </main>
 
