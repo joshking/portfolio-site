@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Josh King" }],
   creator: "Josh King",
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-icon.png",
-    shortcut: "/favicon-16x16.png",
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+    shortcut: "/favicon.png",
   },
   openGraph: {
     type: "website",
@@ -31,7 +31,6 @@ export const metadata: Metadata = {
       "Portfolio website of Josh King, a multi-disciplined software design leader with 20+ years of experience.",
     siteName: "Josh King Portfolio",
   },
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -54,6 +53,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-import './globals.css'
