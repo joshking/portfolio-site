@@ -12,7 +12,6 @@ export function Header() {
         <Link href="/portfolio" className="text-sm font-medium hover:text-[#3ddc91] transition-colors">
           Portfolio
         </Link>
-
       </nav>
     </header>
   )
