@@ -112,7 +112,9 @@ export default function DesignSystemCaseStudy() {
           <div className="flex flex-col gap-12 mb-8">
             <div>
               <h4 className="text-lg font-semibold mb-4">Before & After: Main experiment screen</h4>
-              <p>Improved look and feel and combined 2 screens separated by tabs into a single view pane.</p>
+              <p className="mb-4">
+                Improved look and feel and combined 2 screens separated by tabs into a single view pane.
+              </p>
               <div className="overflow-hidden">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/plotsummary-lg-87m1The8AtAL4rolfq7oQ80W2gquQg.png"
@@ -126,7 +128,7 @@ export default function DesignSystemCaseStudy() {
 
             <div>
               <h4 className="text-lg font-semibold mb-4">Before & After: Experiments View</h4>
-              <p>Improved look and feel with direct access to YAML patch.</p>
+              <p className="mb-4">Improved look and feel with direct access to YAML patch.</p>
               <div className="overflow-hidden">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Experiments-lg-QTnWRf6cDFQquFXTLbdkmS3HbJciUQ.png"
@@ -140,7 +142,7 @@ export default function DesignSystemCaseStudy() {
 
             <div>
               <h4 className="text-lg font-semibold mb-4">Before & After: Performance Dashboard</h4>
-              <p>Significantly improved design and density</p>
+              <p className="mb-4">Significantly improved design and density</p>
               <div className="overflow-hidden">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/performance-lg-IlcezMFYTZvVYqtuPAXqzybrsDipBG.png"
