@@ -99,7 +99,7 @@ export default function StormForgeProject() {
                     View study
                   </Link>
                   <span className="text-gray-400">|</span>
-                  <Link href="https://www.figma.com/design/NxMFBFB1RUmzLRPHTQBJob/Portfolio?node-id=377-63270&t=GTUPx0hnSAN8PwFo-1" className="text-sm text-blue-600 hover:underline">
+                  <Link href="https://www.figma.com/design/NxMFBFB1RUmzLRPHTQBJob/Portfolio?node-id=377-63270&t=GTUPx0hnSAN8PwFo-1" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline">
                     View screens in Figma
                   </Link>
                 </div>
@@ -159,8 +159,7 @@ export default function StormForgeProject() {
                 </p>
                 <Link
                   href="https://www.figma.com/design/NxMFBFB1RUmzLRPHTQBJob/Portfolio?node-id=415-70929&t=GTUPx0hnSAN8PwFo-1"
-                  className="text-sm text-blue-600 hover:underline"
-                >
+                  className="text-sm text-blue-600 hover:underline" target="_blank">
                   View screens in Figma
                 </Link>
               </CardContent>
